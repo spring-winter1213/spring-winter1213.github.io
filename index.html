@@ -140,6 +140,16 @@
       font-size: .72rem; color: var(--accent);
       text-transform: uppercase; letter-spacing: .06em;
     }
+    .my-role {
+      font-size: .78rem;
+      color: var(--green);
+      background: rgba(63,185,80,.08);
+      border: 1px solid rgba(63,185,80,.25);
+      border-radius: 6px;
+      padding: .35rem .7rem;
+      line-height: 1.5;
+    }
+    .my-role strong { color: var(--green); }
 
     /* TIMELINE */
     .timeline { display: flex; flex-direction: column; gap: 0; }
@@ -278,71 +288,77 @@
   <div class="projects-grid">
 
     <a href="https://github.com/KDT12-mnvision/KDT12-mnvison" target="_blank" class="project-card featured">
-      <div class="project-label">★ 주요 프로젝트</div>
+      <div class="project-label">★ 기업 협업</div>
       <div class="project-icon">🏭</div>
-      <h3>버스바 이상탐지 파이프라인</h3>
-      <p>실제 공장 버스바 검사 라인에 적용한 PatchCore 기반 비지도 이상탐지. 30개 카메라-검사 조건, 1,400+ 실험 진행. AUROC 최대 1.0 달성.</p>
+      <h3>버스바 비지도 이상탐지 — PatchCore OCC</h3>
+      <div class="my-role"><strong>내가 한 것:</strong> 백본 비교 실험(v3, 1,440회) + 하이퍼파라미터 탐색(v4, 1,493회) + 퍼센타일 임계값 설계(v5) + FN 원인 분석 → <strong>FN 36→4</strong></div>
+      <p>실제 공장 버스바 검사 라인. 30개 카메라-검사 조건, 불량 데이터 희소 환경에서 정상 이미지만으로 학습하는 OCC 파이프라인 구축. AUROC 0.994 달성. (4인팀 · 본인 기여 40%)</p>
       <div class="project-tags">
         <span class="tag">PatchCore</span>
         <span class="tag">WideResNet-50-2</span>
-        <span class="tag">AUROC</span>
+        <span class="tag">PyTorch</span>
         <span class="tag">산업 AI</span>
       </div>
     </a>
 
     <a href="https://github.com/KDT12-AJIN-PROJECT/Ajin-BizAI" target="_blank" class="project-card featured">
-      <div class="project-label">★ 주요 프로젝트</div>
+      <div class="project-label">★ 경진대회</div>
       <div class="project-icon">📋</div>
-      <h3>AJIN BizAI — 사업계획서 자동 작성 플랫폼</h3>
-      <p>제조기업 정부지원사업 사업계획서 자동 작성 및 AI 심사 평가 플랫폼. 공고문 기반 AI 심사역 페르소나 설계 + Hallucination 제어. 사업계획서 작성 40시간 → 4시간 단축.</p>
+      <h3>AJIN BizAI — 사업계획서 AI 심사 평가 플랫폼</h3>
+      <div class="my-role"><strong>내가 한 것:</strong> AI 심사역 페르소나 설계 + Hallucination 제어 프롬프팅 + 극단적 케이스 합성 데이터 구축 전담</div>
+      <p>제조기업 정부지원사업 사업계획서 자동 작성 및 AI 심사 평가 플랫폼. 작성 시간 40h → 4h 단축. <a href="https://ajinproject-gte6dlkfrcmwhdm6k2eb2y.streamlit.app/" onclick="event.stopPropagation()" target="_blank" style="color:var(--accent);">라이브 데모 ↗</a> (4인팀 · 본인 기여 30%)</p>
       <div class="project-tags">
         <span class="tag">GPT-4o</span>
         <span class="tag">프롬프트 엔지니어링</span>
+        <span class="tag">합성 데이터</span>
         <span class="tag">FastAPI</span>
-        <span class="tag">Streamlit</span>
       </div>
     </a>
 
     <a href="https://github.com/spring-winter1213/portfolio/tree/main/deep%20learning%20텍스트와%20이미지를%20통한%20감정분석" target="_blank" class="project-card">
       <div class="project-icon">🎭</div>
-      <h3>텍스트·이미지 멀티모달 감정 분석</h3>
-      <p>텍스트와 이미지 두 모달리티를 결합하여 감정을 분류하는 딥러닝 모델 구현.</p>
+      <h3>텍스트 감정 분석 — 447:1 불균형 처리</h3>
+      <div class="my-role"><strong>내가 한 것:</strong> 텍스트 분류 파이프라인 전체 단독 — 전처리·10배 언더샘플링·RNN 설계·학습·평가</div>
+      <p>한국어 7감정 분류. 447:1 클래스 불균형(행복 43,786 vs 공포 98)을 10배 언더샘플링으로 해결. 테스트 정확도 32.09%, 실패 원인 3가지로 구조 분석. (팀 · 본인 기여 50%)</p>
       <div class="project-tags">
-        <span class="tag">Deep Learning</span>
-        <span class="tag">KoBERT</span>
-        <span class="tag">CNN</span>
-        <span class="tag">Multimodal</span>
+        <span class="tag">PyTorch</span>
+        <span class="tag">RNN</span>
+        <span class="tag">KoNLPy</span>
+        <span class="tag">불균형 처리</span>
       </div>
     </a>
 
     <a href="https://github.com/spring-winter1213/portfolio/tree/main/nlp%20뉴런교육챗봇" target="_blank" class="project-card">
       <div class="project-icon">🤖</div>
-      <h3>AI 교육 챗봇 NEW LEARN</h3>
-      <p>학습자 질문에 응답하는 통합형 AI 교육 챗봇 설계·구현. OpenAI API 기반 멀티턴 대화 시스템.</p>
+      <h3>NEW LEARN — RAG 기반 프랑스어 학습 챗봇</h3>
+      <div class="my-role"><strong>내가 한 것:</strong> RAG 파이프라인 단독 설계 + Regex→Semantic 성능 비교 실험(33.3%→100%) + Git 브랜치 체계 수립</div>
+      <p>Regex 키워드 매칭(33.3%) 한계를 Sentence-Transformers 의미 검색(100%)으로 해결. 5인 팀, 핵심 RAG 파이프라인 단독 설계. (5인팀 · 본인 기여 35%)</p>
       <div class="project-tags">
-        <span class="tag">NLP</span>
-        <span class="tag">Transformer</span>
-        <span class="tag">OpenAI API</span>
-        <span class="tag">FastAPI</span>
+        <span class="tag">Sentence-Transformers</span>
+        <span class="tag">GPT-4o-mini</span>
+        <span class="tag">RAG</span>
+        <span class="tag">Streamlit</span>
       </div>
     </a>
 
     <a href="https://github.com/spring-winter1213/portfolio/tree/main/public%20data%20기후변화와%20정신질환간의%20상관관계" target="_blank" class="project-card">
       <div class="project-icon">🌡</div>
       <h3>기후변화 × 정신질환 상관관계 분석</h3>
-      <p>기상청 공공데이터와 건강보험 진료 데이터를 결합해 폭염·기온 변화와 우울증·불면증 간의 상관관계를 분석.</p>
+      <div class="my-role"><strong>내가 한 것:</strong> Pearson 상관·추세 제거·시차·계절성 분석 4종 단독 작성</div>
+      <p>열대야-우울증 상관 검증. 가짜 상관(Spurious Correlation) 제거를 위한 Detrending 적용 — r=0.18 → 0.08로 감소 확인. p=0.16, 통계적 유의성 없음 결론. (4인팀 · 본인 기여 35%)</p>
       <div class="project-tags">
-        <span class="tag">공공데이터</span>
-        <span class="tag">Statsmodels</span>
         <span class="tag">Pandas</span>
-        <span class="tag">시각화</span>
+        <span class="tag">Statsmodels</span>
+        <span class="tag">Pearson</span>
+        <span class="tag">공공데이터</span>
       </div>
     </a>
 
     <a href="https://github.com/spring-winter1213/portfolio/tree/main/vision%20색상히스토%20헤이즐넛%20이미지%20이상%20탐지" target="_blank" class="project-card">
       <div class="project-icon">🥜</div>
-      <h3>헤이즐넛 이미지 이상 탐지</h3>
-      <p>MVTec AD 데이터셋으로 OCC 기반 이상 탐지. HSV Histogram 특징 추출 + Isolation Forest + 차영상 결함 위치 시각화.</p>
+      <h3>헤이즐넛 이상 탐지 — 특징 추출 한계 분석</h3>
+      <div class="my-role"><strong>내가 한 것:</strong> 개인 프로젝트 100% — 전체 파이프라인 + F1=0.00 실패 원인 구조 분석</div>
+      <p>HSV Color Histogram + Isolation Forest OCC. F1=0.00 결과를 "특징 벡터에 구조 정보 없음"으로 원인 규명. Threshold Grid Search로 F1=0.26 상한선 확인. (개인 프로젝트)</p>
       <div class="project-tags">
         <span class="tag">OpenCV</span>
         <span class="tag">Isolation Forest</span>
