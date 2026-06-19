@@ -6,18 +6,15 @@
   <title>장윤진 | AI · Data Science Portfolio</title>
   <style>
     :root {
-      --bg: #0d1117;
-      --bg2: #161b22;
-      --bg3: #21262d;
-      --border: #30363d;
-      --accent: #58a6ff;
-      --accent2: #79c0ff;
-      --green: #3fb950;
-      --purple: #d2a8ff;
-      --orange: #ffa657;
-      --text: #e6edf3;
-      --text2: #8b949e;
-      --radius: 12px;
+      --bg:     #f4f6f9;
+      --bg2:    #ffffff;
+      --bg3:    #f0f2f5;
+      --border: #e5e7eb;
+      --accent: #1a6fba;
+      --text:   #111827;
+      --text2:  #6b7280;
+      --radius: 14px;
+      --shadow: 0 2px 10px rgba(0,0,0,0.07);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -31,11 +28,10 @@
     /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(13,17,23,0.85);
+      background: rgba(255,255,255,0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
-      padding: 0 2rem;
-      height: 56px;
+      padding: 0 2rem; height: 56px;
       display: flex; align-items: center; justify-content: space-between;
     }
     .nav-logo { font-weight: 700; color: var(--accent); font-size: 1rem; text-decoration: none; }
@@ -44,124 +40,147 @@
     .nav-links a:hover { color: var(--text); }
 
     /* SECTIONS */
-    section { padding: 5rem 1.5rem; max-width: 900px; margin: 0 auto; }
+    section { padding: 5rem 1.5rem; max-width: 960px; margin: 0 auto; }
     section:first-of-type { padding-top: 8rem; }
 
     /* HERO */
     #hero { text-align: center; padding-top: 10rem; padding-bottom: 5rem; }
     .hero-tag {
       display: inline-block;
-      background: rgba(88,166,255,.12);
-      color: var(--accent);
-      border: 1px solid rgba(88,166,255,.3);
-      border-radius: 100px;
-      padding: .25rem .9rem;
-      font-size: .82rem;
-      margin-bottom: 1.5rem;
+      background: rgba(26,111,186,.1); color: var(--accent);
+      border: 1px solid rgba(26,111,186,.25); border-radius: 100px;
+      padding: .25rem .9rem; font-size: .82rem; margin-bottom: 1.5rem;
     }
-    #hero h1 { font-size: clamp(2.2rem, 6vw, 3.5rem); font-weight: 800; margin-bottom: .5rem; }
+    #hero h1 { font-size: clamp(2.2rem, 6vw, 3.5rem); font-weight: 800; margin-bottom: .5rem; color: var(--text); }
     #hero h1 span { color: var(--accent); }
     .hero-sub { color: var(--text2); font-size: 1.1rem; margin-bottom: 2rem; }
     .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
     .btn {
       display: inline-flex; align-items: center; gap: .4rem;
       padding: .6rem 1.4rem; border-radius: 8px;
-      font-size: .9rem; font-weight: 600; text-decoration: none;
-      transition: all .2s;
+      font-size: .9rem; font-weight: 600; text-decoration: none; transition: all .2s;
     }
-    .btn-primary { background: var(--accent); color: #0d1117; }
-    .btn-primary:hover { background: var(--accent2); }
-    .btn-outline { border: 1px solid var(--border); color: var(--text); background: transparent; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: #1558a0; }
+    .btn-outline { border: 1px solid var(--border); color: var(--text); background: var(--bg2); }
     .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
 
     /* SECTION TITLE */
-    .section-title {
-      font-size: 1.5rem; font-weight: 700;
-      margin-bottom: 2rem;
-      padding-bottom: .75rem;
-      border-bottom: 1px solid var(--border);
-      display: flex; align-items: center; gap: .6rem;
-    }
+    .section-title { font-size: 1.5rem; font-weight: 700; margin-bottom: .4rem; display: flex; align-items: center; gap: .6rem; }
+    .section-rule { height: 3px; width: 36px; background: var(--accent); border-radius: 2px; margin-bottom: 2rem; }
 
     /* ABOUT */
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
     .about-card {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow);
     }
     .about-card h3 { color: var(--accent); font-size: .85rem; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .75rem; }
     .about-card p, .about-card li { color: var(--text2); font-size: .9rem; }
     .about-card ul { list-style: none; display: flex; flex-direction: column; gap: .4rem; }
-    .about-card li::before { content: "▸ "; color: var(--green); }
+    .about-card li::before { content: "▸ "; color: var(--accent); }
 
     /* SKILLS */
     .skill-group { margin-bottom: 1.5rem; }
     .skill-group-label { color: var(--text2); font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; margin-bottom: .6rem; }
     .badges { display: flex; flex-wrap: wrap; gap: .5rem; }
     .badge {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: .3rem .75rem;
-      font-size: .82rem;
-      color: var(--text);
-      transition: border-color .2s;
+      background: var(--bg2); border: 1px solid var(--border); border-radius: 6px;
+      padding: .3rem .75rem; font-size: .82rem; color: var(--text);
     }
-    .badge:hover { border-color: var(--accent); color: var(--accent); }
-    .badge.accent { border-color: rgba(88,166,255,.4); color: var(--accent); background: rgba(88,166,255,.08); }
-    .badge.green { border-color: rgba(63,185,80,.4); color: var(--green); background: rgba(63,185,80,.08); }
-    .badge.purple { border-color: rgba(210,168,255,.4); color: var(--purple); background: rgba(210,168,255,.08); }
-    .badge.orange { border-color: rgba(255,166,87,.4); color: var(--orange); background: rgba(255,166,87,.08); }
+    .badge.accent { border-color: rgba(26,111,186,.4); color: var(--accent); background: rgba(26,111,186,.06); }
+    .badge.green  { border-color: rgba(22,163,74,.4);  color: #16a34a; background: rgba(22,163,74,.06); }
+    .badge.purple { border-color: rgba(124,58,237,.4); color: #7c3aed; background: rgba(124,58,237,.06); }
+    .badge.orange { border-color: rgba(234,88,12,.4);  color: #ea580c; background: rgba(234,88,12,.06); }
 
     /* PROJECTS */
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem; }
-    .project-card {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      text-decoration: none;
-      display: flex; flex-direction: column; gap: .75rem;
-      transition: border-color .2s, transform .2s;
-    }
-    .project-card:hover { border-color: var(--accent); transform: translateY(-3px); }
-    .project-icon { font-size: 2rem; }
-    .project-card h3 { color: var(--text); font-size: 1rem; font-weight: 700; line-height: 1.4; }
-    .project-card p { color: var(--text2); font-size: .85rem; flex-grow: 1; }
-    .project-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
-    .tag {
-      background: var(--bg3); border-radius: 4px;
-      padding: .15rem .5rem; font-size: .75rem; color: var(--text2);
-    }
-    .project-card.featured { border-color: rgba(88,166,255,.4); background: rgba(88,166,255,.04); }
-    .project-card.featured .project-label {
-      font-size: .72rem; color: var(--accent);
-      text-transform: uppercase; letter-spacing: .06em;
-    }
-    .my-role {
-      font-size: .78rem;
-      color: var(--green);
-      background: rgba(63,185,80,.08);
-      border: 1px solid rgba(63,185,80,.25);
-      border-radius: 6px;
-      padding: .35rem .7rem;
-      line-height: 1.5;
-    }
-    .my-role strong { color: var(--green); }
+    .projects-intro { color: var(--text2); font-size: .9rem; margin-bottom: 2rem; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
 
-    /* TIMELINE */
-    .timeline { display: flex; flex-direction: column; gap: 0; }
-    .timeline-item { display: flex; gap: 1.5rem; padding: 0 0 2rem 0; }
-    .timeline-left { display: flex; flex-direction: column; align-items: center; min-width: 40px; }
-    .timeline-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 5px; }
-    .timeline-line { width: 2px; flex-grow: 1; background: var(--border); margin-top: 4px; }
-    .timeline-item:last-child .timeline-line { display: none; }
-    .timeline-content { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; flex-grow: 1; }
-    .timeline-date { color: var(--accent); font-size: .8rem; margin-bottom: .3rem; }
-    .timeline-content h3 { font-size: 1rem; margin-bottom: .4rem; }
-    .timeline-content p { color: var(--text2); font-size: .875rem; }
+    /* CARD */
+    .project-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      display: flex; flex-direction: column;
+      box-shadow: var(--shadow);
+      transition: box-shadow .2s, transform .2s;
+      cursor: pointer;
+    }
+    .project-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.13); transform: translateY(-3px); }
+
+    .card-header {
+      padding: 1rem 1.25rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .card-cat {
+      font-size: .71rem; font-weight: 700; letter-spacing: .05em;
+      text-transform: uppercase; color: rgba(255,255,255,.95);
+      background: rgba(255,255,255,.18); border-radius: 100px;
+      padding: .2rem .7rem; border: 1px solid rgba(255,255,255,.3);
+    }
+    .card-icon { font-size: 1.8rem; }
+
+    .card-body {
+      padding: 1rem 1.25rem; flex-grow: 1;
+      display: flex; flex-direction: column; gap: .6rem;
+    }
+    .card-body h3 { font-size: .97rem; font-weight: 700; color: var(--text); line-height: 1.4; }
+    .card-desc { color: var(--text2); font-size: .83rem; flex-grow: 1; line-height: 1.55; }
+
+    .my-role {
+      font-size: .8rem; border-radius: 8px;
+      padding: .55rem .8rem; line-height: 1.55; border-left: 3px solid;
+    }
+    .my-role strong.label {
+      display: block; font-size: .7rem;
+      text-transform: uppercase; letter-spacing: .05em; margin-bottom: .2rem;
+    }
+
+    .project-tags { display: flex; flex-wrap: wrap; gap: .35rem; }
+    .tag {
+      background: var(--bg3); border: 1px solid var(--border); border-radius: 4px;
+      padding: .15rem .5rem; font-size: .74rem; color: var(--text2);
+    }
+
+    .card-footer {
+      padding: .7rem 1.25rem; border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      background: var(--bg3);
+    }
+    .card-link  { font-size: .82rem; font-weight: 600; text-decoration: none; }
+    .demo-link  { font-size: .78rem; font-weight: 600; text-decoration: none; opacity: .85; }
+    .demo-link:hover { opacity: 1; }
+
+    /* ── Color variants ── */
+    .c-teal  .card-header { background: linear-gradient(135deg,#0d9488,#0f766e); }
+    .c-teal  .my-role     { background:rgba(13,148,136,.06); border-color:#0d9488; color:#065f58; }
+    .c-teal  .my-role strong.label { color:#0d9488; }
+    .c-teal  .card-link,  .c-teal  .demo-link  { color:#0d9488; }
+
+    .c-blue  .card-header { background: linear-gradient(135deg,#2563eb,#1d4ed8); }
+    .c-blue  .my-role     { background:rgba(37,99,235,.06); border-color:#2563eb; color:#1e3a8a; }
+    .c-blue  .my-role strong.label { color:#2563eb; }
+    .c-blue  .card-link,  .c-blue  .demo-link  { color:#2563eb; }
+
+    .c-purple .card-header { background: linear-gradient(135deg,#7c3aed,#6d28d9); }
+    .c-purple .my-role     { background:rgba(124,58,237,.06); border-color:#7c3aed; color:#4c1d95; }
+    .c-purple .my-role strong.label { color:#7c3aed; }
+    .c-purple .card-link               { color:#7c3aed; }
+
+    .c-amber .card-header  { background: linear-gradient(135deg,#d97706,#b45309); }
+    .c-amber .my-role      { background:rgba(217,119,6,.06); border-color:#d97706; color:#78350f; }
+    .c-amber .my-role strong.label { color:#b45309; }
+    .c-amber .card-link                { color:#b45309; }
+
+    .c-cyan  .card-header  { background: linear-gradient(135deg,#0891b2,#0e7490); }
+    .c-cyan  .my-role      { background:rgba(8,145,178,.06); border-color:#0891b2; color:#164e63; }
+    .c-cyan  .my-role strong.label { color:#0891b2; }
+    .c-cyan  .card-link                { color:#0891b2; }
+
+    .c-green .card-header  { background: linear-gradient(135deg,#16a34a,#15803d); }
+    .c-green .my-role      { background:rgba(22,163,74,.06); border-color:#16a34a; color:#14532d; }
+    .c-green .my-role strong.label { color:#16a34a; }
+    .c-green .card-link                { color:#15803d; }
 
     /* CONTACT */
     .contact-links { display: flex; gap: 1rem; flex-wrap: wrap; }
@@ -169,18 +188,18 @@
       display: flex; align-items: center; gap: .6rem;
       background: var(--bg2); border: 1px solid var(--border);
       border-radius: var(--radius); padding: .9rem 1.4rem;
-      text-decoration: none; color: var(--text);
+      text-decoration: none; color: var(--text); box-shadow: var(--shadow);
       transition: border-color .2s;
     }
     .contact-link:hover { border-color: var(--accent); color: var(--accent); }
     .contact-link svg { width: 20px; height: 20px; fill: currentColor; }
 
     /* FOOTER */
-    footer { text-align: center; padding: 2rem; color: var(--text2); font-size: .82rem; border-top: 1px solid var(--border); }
+    footer { text-align: center; padding: 2rem; color: var(--text2); font-size: .82rem; border-top: 1px solid var(--border); background: var(--bg2); }
 
     @media (max-width: 640px) {
       .about-grid { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
+      .nav-links  { display: none; }
     }
   </style>
 </head>
@@ -202,21 +221,16 @@
   <h1>장윤진 <span>Yunjin Jang</span></h1>
   <p class="hero-sub">데이터로 현실 문제를 풀어내는 AI 개발자</p>
   <div class="hero-btns">
-    <a href="https://github.com/spring-winter1213/portfolio" class="btn btn-primary" target="_blank">
-      📂 Portfolio
-    </a>
-    <a href="https://github.com/spring-winter1213" class="btn btn-outline" target="_blank">
-      GitHub
-    </a>
-    <a href="mailto:happyhelper.jang@gmail.com" class="btn btn-outline">
-      ✉ Contact
-    </a>
+    <a href="https://github.com/spring-winter1213/portfolio" class="btn btn-primary" target="_blank">📂 Portfolio</a>
+    <a href="https://github.com/spring-winter1213" class="btn btn-outline" target="_blank">GitHub</a>
+    <a href="mailto:happyhelper.jang@gmail.com" class="btn btn-outline">✉ Contact</a>
   </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
   <h2 class="section-title">👤 About Me</h2>
+  <div class="section-rule"></div>
   <div class="about-grid">
     <div class="about-card">
       <h3>Who I Am</h3>
@@ -237,6 +251,7 @@
 <!-- SKILLS -->
 <section id="skills">
   <h2 class="section-title">🛠 Skills</h2>
+  <div class="section-rule"></div>
 
   <div class="skill-group">
     <div class="skill-group-label">Language &amp; Tools</div>
@@ -247,7 +262,6 @@
       <span class="badge">FastAPI</span>
     </div>
   </div>
-
   <div class="skill-group">
     <div class="skill-group-label">ML / Deep Learning</div>
     <div class="badges">
@@ -259,7 +273,6 @@
       <span class="badge orange">Isolation Forest</span>
     </div>
   </div>
-
   <div class="skill-group">
     <div class="skill-group-label">Computer Vision</div>
     <div class="badges">
@@ -269,7 +282,6 @@
       <span class="badge green">Anomaly Detection</span>
     </div>
   </div>
-
   <div class="skill-group">
     <div class="skill-group-label">Data Analysis &amp; Visualization</div>
     <div class="badges">
@@ -285,90 +297,148 @@
 <!-- PROJECTS -->
 <section id="projects">
   <h2 class="section-title">📂 Projects</h2>
+  <div class="section-rule"></div>
+  <p class="projects-intro">중요도순. 카드 클릭 시 저장소로 이동합니다.</p>
   <div class="projects-grid">
 
-    <a href="https://github.com/KDT12-mnvision/KDT12-mnvison" target="_blank" class="project-card featured">
-      <div class="project-label">★ 기업 협업</div>
-      <div class="project-icon">🏭</div>
-      <h3>버스바 비지도 이상탐지 — PatchCore OCC</h3>
-      <div class="my-role"><strong>내가 한 것:</strong> 백본 비교 실험(v3, 1,440회) + 하이퍼파라미터 탐색(v4, 1,493회) + 퍼센타일 임계값 설계(v5) + FN 원인 분석 → <strong>FN 36→4</strong></div>
-      <p>실제 공장 버스바 검사 라인. 30개 카메라-검사 조건, 불량 데이터 희소 환경에서 정상 이미지만으로 학습하는 OCC 파이프라인 구축. AUROC 0.994 달성. (4인팀 · 본인 기여 40%)</p>
-      <div class="project-tags">
-        <span class="tag">PatchCore</span>
-        <span class="tag">WideResNet-50-2</span>
-        <span class="tag">PyTorch</span>
-        <span class="tag">산업 AI</span>
+    <!-- 버스바 ── teal -->
+    <div class="project-card c-teal" onclick="window.open('https://github.com/KDT12-mnvision/KDT12-mnvison','_blank')">
+      <div class="card-header">
+        <span class="card-cat">기업 협업 · CV</span>
+        <div class="card-icon">🏭</div>
       </div>
-    </a>
-
-    <div class="project-card featured" onclick="window.open('https://github.com/KDT12-AJIN-PROJECT/Ajin-BizAI','_blank')" style="cursor:pointer">
-      <div class="project-label">★ 경진대회</div>
-      <div class="project-icon">📋</div>
-      <h3>AJIN BizAI — 사업계획서 AI 심사 평가 플랫폼</h3>
-      <div class="my-role"><strong>내가 한 것:</strong> AI 심사역 페르소나 설계 + Hallucination 제어 프롬프팅 + 극단적 케이스 합성 데이터 구축 전담</div>
-      <p>제조기업 정부지원사업 사업계획서 자동 작성 및 AI 심사 평가 플랫폼. 작성 시간 40h → 4h 단축. (4인팀 · 본인 기여 30%)</p>
-      <div style="margin-top:.1rem">
-        <a href="https://ajinproject-gte6dlkfrcmwhdm6k2eb2y.streamlit.app/" onclick="event.stopPropagation()" target="_blank" style="color:var(--accent);font-size:.82rem;text-decoration:none;">🔥 라이브 데모 ↗</a>
+      <div class="card-body">
+        <h3>버스바 비지도 이상탐지 — PatchCore OCC</h3>
+        <div class="my-role">
+          <strong class="label">내가 한 것</strong>
+          백본 비교 실험(v3, 1,440회) + 하이퍼파라미터 탐색(v4, 1,493회) + 퍼센타일 임계값 설계(v5) + FN 원인 분석 → <b>FN 36→4</b>
+        </div>
+        <p class="card-desc">실제 공장 버스바 검사 라인. 불량 데이터 희소 환경에서 정상 이미지만으로 학습하는 OCC 파이프라인. AUROC 0.994. (4인팀 · 기여 40%)</p>
+        <div class="project-tags">
+          <span class="tag">PatchCore</span><span class="tag">WideResNet-50-2</span>
+          <span class="tag">PyTorch</span><span class="tag">산업 AI</span>
+        </div>
       </div>
-      <div class="project-tags">
-        <span class="tag">GPT-4o</span>
-        <span class="tag">프롬프트 엔지니어링</span>
-        <span class="tag">합성 데이터</span>
-        <span class="tag">FastAPI</span>
+      <div class="card-footer">
+        <a href="https://github.com/KDT12-mnvision/KDT12-mnvison" onclick="event.stopPropagation()" class="card-link" target="_blank">GitHub →</a>
       </div>
     </div>
 
-    <a href="https://github.com/spring-winter1213/portfolio/tree/main/deep%20learning%20텍스트와%20이미지를%20통한%20감정분석" target="_blank" class="project-card">
-      <div class="project-icon">🎭</div>
-      <h3>텍스트 감정 분석 — 447:1 불균형 처리</h3>
-      <div class="my-role"><strong>내가 한 것:</strong> 텍스트 분류 파이프라인 전체 단독 — 전처리·10배 언더샘플링·RNN 설계·학습·평가</div>
-      <p>한국어 7감정 분류. 447:1 클래스 불균형(행복 43,786 vs 공포 98)을 10배 언더샘플링으로 해결. 테스트 정확도 32.09%, 실패 원인 3가지로 구조 분석. (팀 · 본인 기여 50%)</p>
-      <div class="project-tags">
-        <span class="tag">PyTorch</span>
-        <span class="tag">RNN</span>
-        <span class="tag">KoNLPy</span>
-        <span class="tag">불균형 처리</span>
+    <!-- AJIN ── blue -->
+    <div class="project-card c-blue" onclick="window.open('https://github.com/KDT12-AJIN-PROJECT/Ajin-BizAI','_blank')">
+      <div class="card-header">
+        <span class="card-cat">경진대회 · LLM</span>
+        <div class="card-icon">📋</div>
       </div>
-    </a>
+      <div class="card-body">
+        <h3>AJIN BizAI — 사업계획서 AI 심사 평가 플랫폼</h3>
+        <div class="my-role">
+          <strong class="label">내가 한 것</strong>
+          AI 심사역 페르소나 설계 + Hallucination 제어 프롬프팅 + 극단적 케이스 합성 데이터 구축 전담
+        </div>
+        <p class="card-desc">제조기업 정부지원사업 사업계획서 자동 작성 및 AI 심사 평가 플랫폼. 작성 시간 40h → 4h 단축. (4인팀 · 기여 30%)</p>
+        <div class="project-tags">
+          <span class="tag">GPT-4o</span><span class="tag">프롬프트 엔지니어링</span>
+          <span class="tag">합성 데이터</span><span class="tag">FastAPI</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://github.com/KDT12-AJIN-PROJECT/Ajin-BizAI" onclick="event.stopPropagation()" class="card-link" target="_blank">GitHub →</a>
+        <a href="https://ajinproject-gte6dlkfrcmwhdm6k2eb2y.streamlit.app/" onclick="event.stopPropagation()" class="demo-link" target="_blank" style="color:#2563eb">🔥 라이브 데모 →</a>
+      </div>
+    </div>
 
-    <a href="https://github.com/spring-winter1213/portfolio/tree/main/nlp%20뉴런교육챗봇" target="_blank" class="project-card">
-      <div class="project-icon">🤖</div>
-      <h3>NEW LEARN — RAG 기반 프랑스어 학습 챗봇</h3>
-      <div class="my-role"><strong>내가 한 것:</strong> RAG 파이프라인 단독 설계 + Regex→Semantic 성능 비교 실험(33.3%→100%) + Git 브랜치 체계 수립</div>
-      <p>Regex 키워드 매칭(33.3%) 한계를 Sentence-Transformers 의미 검색(100%)으로 해결. 5인 팀, 핵심 RAG 파이프라인 단독 설계. (5인팀 · 본인 기여 35%)</p>
-      <div class="project-tags">
-        <span class="tag">Sentence-Transformers</span>
-        <span class="tag">GPT-4o-mini</span>
-        <span class="tag">RAG</span>
-        <span class="tag">Streamlit</span>
+    <!-- 감정분석 ── purple -->
+    <div class="project-card c-purple" onclick="window.open('https://github.com/spring-winter1213/portfolio/tree/main/deep%20learning%20텍스트와%20이미지를%20통한%20감정분석','_blank')">
+      <div class="card-header">
+        <span class="card-cat">Deep Learning · NLP</span>
+        <div class="card-icon">🎭</div>
       </div>
-    </a>
+      <div class="card-body">
+        <h3>텍스트 감정 분석 — 447:1 불균형 처리</h3>
+        <div class="my-role">
+          <strong class="label">내가 한 것</strong>
+          텍스트 분류 파이프라인 단독 — 전처리·10배 언더샘플링·RNN 설계·학습·평가
+        </div>
+        <p class="card-desc">한국어 7감정 분류. 447:1 클래스 불균형(행복 43,786 vs 공포 98)을 10배 언더샘플링으로 해결. 실패 원인 3가지 구조 분석. (팀 · 기여 50%)</p>
+        <div class="project-tags">
+          <span class="tag">PyTorch</span><span class="tag">RNN</span>
+          <span class="tag">KoNLPy</span><span class="tag">불균형 처리</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://github.com/spring-winter1213/portfolio/tree/main/deep%20learning%20텍스트와%20이미지를%20통한%20감정분석" onclick="event.stopPropagation()" class="card-link" target="_blank">GitHub →</a>
+      </div>
+    </div>
 
-    <a href="https://github.com/spring-winter1213/portfolio/tree/main/public%20data%20기후변화와%20정신질환간의%20상관관계" target="_blank" class="project-card">
-      <div class="project-icon">🌡</div>
-      <h3>기후변화 × 정신질환 상관관계 분석</h3>
-      <div class="my-role"><strong>내가 한 것:</strong> Pearson 상관·추세 제거·시차·계절성 분석 4종 단독 작성</div>
-      <p>열대야-우울증 상관 검증. 가짜 상관(Spurious Correlation) 제거를 위한 Detrending 적용 — r=0.18 → 0.08로 감소 확인. p=0.16, 통계적 유의성 없음 결론. (4인팀 · 본인 기여 35%)</p>
-      <div class="project-tags">
-        <span class="tag">Pandas</span>
-        <span class="tag">Statsmodels</span>
-        <span class="tag">Pearson</span>
-        <span class="tag">공공데이터</span>
+    <!-- 챗봇 ── cyan -->
+    <div class="project-card c-cyan" onclick="window.open('https://github.com/spring-winter1213/portfolio/tree/main/nlp%20뉴런교육챗봇','_blank')">
+      <div class="card-header">
+        <span class="card-cat">NLP · RAG</span>
+        <div class="card-icon">🤖</div>
       </div>
-    </a>
+      <div class="card-body">
+        <h3>NEW LEARN — RAG 기반 프랑스어 학습 챗봇</h3>
+        <div class="my-role">
+          <strong class="label">내가 한 것</strong>
+          RAG 파이프라인 단독 설계 + Regex→Semantic 성능 비교 실험(33.3%→100%) + Git 브랜치 체계 수립
+        </div>
+        <p class="card-desc">Regex 키워드 매칭(33.3%) 한계를 Sentence-Transformers 의미 검색(100%)으로 해결. 핵심 RAG 파이프라인 단독 설계. (5인팀 · 기여 35%)</p>
+        <div class="project-tags">
+          <span class="tag">Sentence-Transformers</span><span class="tag">GPT-4o-mini</span>
+          <span class="tag">RAG</span><span class="tag">Streamlit</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://github.com/spring-winter1213/portfolio/tree/main/nlp%20뉴런교육챗봇" onclick="event.stopPropagation()" class="card-link" target="_blank">GitHub →</a>
+      </div>
+    </div>
 
-    <a href="https://github.com/spring-winter1213/portfolio/tree/main/vision%20색상히스토%20헤이즐넛%20이미지%20이상%20탐지" target="_blank" class="project-card">
-      <div class="project-icon">🥜</div>
-      <h3>헤이즐넛 이상 탐지 — 특징 추출 한계 분석</h3>
-      <div class="my-role"><strong>내가 한 것:</strong> 헤이즐넛 파트 파이프라인 전체 + 특징 추출 한계 분석 + 실패 원인 구조 분석 단독</div>
-      <p>HSV Color Histogram + Isolation Forest OCC. F1=0.00 결과를 "특징 벡터에 구조 정보 없음"으로 원인 규명. Threshold Grid Search로 F1=0.26 상한선 확인. (4인팀)</p>
-      <div class="project-tags">
-        <span class="tag">OpenCV</span>
-        <span class="tag">Isolation Forest</span>
-        <span class="tag">HSV Histogram</span>
-        <span class="tag">MVTec AD</span>
+    <!-- 기후변화 ── amber -->
+    <div class="project-card c-amber" onclick="window.open('https://github.com/spring-winter1213/portfolio/tree/main/public%20data%20기후변화와%20정신질환간의%20상관관계','_blank')">
+      <div class="card-header">
+        <span class="card-cat">데이터 분석 · 공공데이터</span>
+        <div class="card-icon">🌡</div>
       </div>
-    </a>
+      <div class="card-body">
+        <h3>기후변화 × 정신질환 상관관계 분석</h3>
+        <div class="my-role">
+          <strong class="label">내가 한 것</strong>
+          Pearson 상관·추세 제거·시차·계절성 분석 4종 단독 작성
+        </div>
+        <p class="card-desc">열대야-우울증 상관 검증. 가짜 상관 제거 위한 Detrending 적용. r=0.18 → 0.08 감소 확인, p=0.16 유의성 없음 결론. (4인팀 · 기여 35%)</p>
+        <div class="project-tags">
+          <span class="tag">Pandas</span><span class="tag">Statsmodels</span>
+          <span class="tag">Pearson</span><span class="tag">공공데이터</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://github.com/spring-winter1213/portfolio/tree/main/public%20data%20기후변화와%20정신질환간의%20상관관계" onclick="event.stopPropagation()" class="card-link" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <!-- 헤이즐넛 ── green -->
+    <div class="project-card c-green" onclick="window.open('https://github.com/spring-winter1213/portfolio/tree/main/vision%20색상히스토%20헤이즐넛%20이미지%20이상%20탐지','_blank')">
+      <div class="card-header">
+        <span class="card-cat">Computer Vision · OCC</span>
+        <div class="card-icon">🥜</div>
+      </div>
+      <div class="card-body">
+        <h3>헤이즐넛 이상 탐지 — 특징 추출 한계 분석</h3>
+        <div class="my-role">
+          <strong class="label">내가 한 것</strong>
+          헤이즐넛 파트 파이프라인 전체 + 특징 추출 한계 분석 + 실패 원인 구조 분석 단독
+        </div>
+        <p class="card-desc">HSV Color Histogram + Isolation Forest OCC. F1=0.00 결과를 "특징 벡터에 구조 정보 없음"으로 원인 규명. Threshold Grid Search로 F1=0.26 상한선 확인. (4인팀)</p>
+        <div class="project-tags">
+          <span class="tag">OpenCV</span><span class="tag">Isolation Forest</span>
+          <span class="tag">HSV Histogram</span><span class="tag">MVTec AD</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://github.com/spring-winter1213/portfolio/tree/main/vision%20색상히스토%20헤이즐넛%20이미지%20이상%20탐지" onclick="event.stopPropagation()" class="card-link" target="_blank">GitHub →</a>
+      </div>
+    </div>
 
   </div>
 </section>
@@ -376,6 +446,7 @@
 <!-- CONTACT -->
 <section id="contact">
   <h2 class="section-title">📬 Contact</h2>
+  <div class="section-rule"></div>
   <div class="contact-links">
     <a href="https://github.com/spring-winter1213" class="contact-link" target="_blank">
       <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.11-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.65 1.65.25 2.87.12 3.17.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
